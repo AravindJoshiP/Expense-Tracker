@@ -13,6 +13,9 @@ class AddExpViewController: UIViewController {
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var dateField: UIDatePicker!
     @IBOutlet weak var noteField: UITextView!
+    
+    var expense: Expense?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
