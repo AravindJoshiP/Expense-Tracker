@@ -9,12 +9,15 @@ import UIKit
 
 class summaryViewController: UIViewController {
 
+    @IBOutlet weak var amountLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        amountLabel.text = "\(currency) \(amountSpent)"
+    }
 
     /*
     // MARK: - Navigation

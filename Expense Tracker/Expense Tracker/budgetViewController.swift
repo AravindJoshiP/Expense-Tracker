@@ -9,13 +9,28 @@ import UIKit
 
 class budgetViewController: UIViewController {
 
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var budgetLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        budgetLabel.text = "\(currency) \(Budget)"
+        slider.value = Float(Budget)
     }
     
-
+    @IBAction func sliderFunc(_ sender: Any) {
+        let curr = slider.value
+        Budget = Int(curr)
+        budgetLabel.text = "\(currency) \(Budget)"
+    }
+    
+    @IBAction func updateFunc(_ sender: Any) {
+        Budget = Int(slider.value)
+    }
+    @IBAction func backFunc(_ sender: Any) {
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 

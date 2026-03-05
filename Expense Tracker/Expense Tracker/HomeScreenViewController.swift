@@ -7,12 +7,22 @@
 
 import UIKit
 
+var amountSpent:Int = 500
+var currency: String = "$"
+var Budget: Int = 5000
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var budgetLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        amountLabel.text = "\(currency) \(amountSpent)"
+        budgetLabel.text = "\(currency) \(Budget)"
+        
     }
     
 

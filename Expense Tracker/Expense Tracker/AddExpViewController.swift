@@ -9,13 +9,31 @@ import UIKit
 
 class AddExpViewController: UIViewController {
 
+    @IBOutlet weak var amountField: UITextField!
+    @IBOutlet weak var categoryField: UITextField!
+    @IBOutlet weak var dateField: UIDatePicker!
+    @IBOutlet weak var noteField: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveFunc(_ sender: Any) {
+        let curr = Int(amountField.text!)!
+        amountSpent += curr
+        if(amountSpent > Budget){
+            let alert = UIAlertController(title: "Exceeding Limit", message: "You're expenditure is exceeding the budget limit", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func back(_ sender: UIBarButtonItem){
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
