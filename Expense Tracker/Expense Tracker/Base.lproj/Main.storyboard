@@ -174,7 +174,7 @@
         <!--Settings-->
         <scene sceneID="igb-HX-nMJ">
             <objects>
-                <viewController title="Settings" id="AeL-kt-S0M" sceneMemberID="viewController">
+                <viewController title="Settings" id="AeL-kt-S0M" customClass="settingsViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzU-Vf-4pe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,12 +220,18 @@
                                 </menu>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="USD / INR / GBP"/>
+                                <connections>
+                                    <action selector="currencyValue:" destination="AeL-kt-S0M" eventType="valueChanged" id="bVd-DJ-Uw4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-le-OKs">
                                 <rect key="frame" x="166" y="646" width="61" height="35"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Save"/>
+                                <connections>
+                                    <action selector="saveFunc:" destination="AeL-kt-S0M" eventType="touchUpInside" id="jdc-Lv-SCG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r65-qi-roh"/>
@@ -249,6 +255,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="JyJ-Gq-3K7"/>
+                    <connections>
+                        <outlet property="currencydropdown" destination="6jy-86-pxL" id="CxH-qC-3OH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rv3-ux-MhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,7 +370,7 @@
             <objects>
                 <viewController title="addExpenseScreen" id="C4g-qM-oyN" customClass="AddExpViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VZC-BE-PN9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Expense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJZ-9D-x5e">
@@ -439,7 +448,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Delete"/>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiP-g1-Wxf">
-                                <rect key="frame" x="0.0" y="798" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="808" width="393" height="44"/>
                                 <items>
                                     <barButtonItem style="done" systemItem="done" id="Zji-uj-xj2">
                                         <color key="tintColor" systemColor="systemOrangeColor"/>
@@ -496,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kck-4i-iMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2673" y="571"/>
+            <point key="canvasLocation" x="-2766" y="789"/>
         </scene>
         <!--Budget View Controller-->
         <scene sceneID="O8T-mG-fmi">
@@ -584,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIU-lg-teN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1390" y="192"/>
+            <point key="canvasLocation" x="-1286" y="58"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="5KU-Tf-42Y">
@@ -595,31 +604,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" textLabel="IJF-2H-mDz" detailTextLabel="Sjh-16-YJv" style="IBUITableViewCellStyleSubtitle" id="0Bv-wf-ez9">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" textLabel="QHu-Mb-Rmw" detailTextLabel="oUz-tL-ZtT" rowHeight="71" style="IBUITableViewCellStyleSubtitle" id="0Bv-wf-ez9">
+                                <rect key="frame" x="0.0" y="50" width="393" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Bv-wf-ez9" id="f79-Pt-8qZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJF-2H-mDz">
-                                            <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="QHu-Mb-Rmw">
+                                            <rect key="frame" x="20" y="16.333333333333336" width="31.666666666666668" height="19.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sjh-16-YJv">
-                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oUz-tL-ZtT">
+                                            <rect key="frame" x="19.999999999999996" y="38.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="C4g-qM-oyN" kind="presentation" id="5bO-Ho-2jd"/>
+                                    <segue destination="C4g-qM-oyN" kind="presentation" modalPresentationStyle="fullScreen" id="5bO-Ho-2jd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -628,11 +637,18 @@
                             <outlet property="delegate" destination="Rhr-5Y-QTP" id="M86-wZ-VEv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Qf7-tw-TB2"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Qf7-tw-TB2">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="4kV-wW-wHN">
+                            <color key="tintColor" systemColor="tintColor"/>
+                            <connections>
+                                <action selector="doneFunc:" destination="Rhr-5Y-QTP" id="vNq-IF-AeQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIj-mD-Ja6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-608" y="813"/>
+            <point key="canvasLocation" x="325.95419847328242" y="57.74647887323944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r87-9P-cmL">
@@ -789,6 +805,9 @@
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

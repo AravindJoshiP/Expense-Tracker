@@ -17,10 +17,13 @@ class allExpenseTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.title = "All Expenses"
     }
     
+    @IBAction func doneFunc(_ sender: Any) {
+        dismiss(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
     }
 
