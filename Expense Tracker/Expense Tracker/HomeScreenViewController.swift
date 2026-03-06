@@ -12,6 +12,7 @@ var currency: String = "$"
 var Budget: Int = 5000
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var donutChartView: DonutChartView!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     override func viewDidLoad() {
@@ -22,6 +23,9 @@ class HomeScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         amountLabel.text = "\(currency) \(amountSpent)"
         budgetLabel.text = "\(currency) \(Budget)"
+        
+        donutChartView.amountSpent = CGFloat(amountSpent)
+        donutChartView.budget = CGFloat(Budget)
         
     }
     

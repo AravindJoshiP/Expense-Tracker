@@ -334,6 +334,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AM6-kh-p1h" customClass="DonutChartView" customModule="Expense_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="16" y="236.00000000000003" width="361" height="386.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9T3-14-gES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -343,10 +347,14 @@
                             <constraint firstItem="9T3-14-gES" firstAttribute="trailing" secondItem="HSB-cd-64h" secondAttribute="trailing" constant="32" id="53i-M8-6Nv"/>
                             <constraint firstItem="dQQ-G5-DaQ" firstAttribute="leading" secondItem="9T3-14-gES" secondAttribute="leading" constant="16" id="DEl-Md-biJ"/>
                             <constraint firstItem="dQQ-G5-DaQ" firstAttribute="centerX" secondItem="Ull-8X-OAF" secondAttribute="centerX" id="EtW-Mt-Ox4"/>
+                            <constraint firstItem="9T3-14-gES" firstAttribute="trailing" secondItem="AM6-kh-p1h" secondAttribute="trailing" constant="16" id="HkZ-Qr-PIz"/>
+                            <constraint firstItem="AM6-kh-p1h" firstAttribute="top" secondItem="Tky-DC-VHU" secondAttribute="bottom" constant="24" id="UhI-Ik-cg2"/>
+                            <constraint firstItem="AM6-kh-p1h" firstAttribute="leading" secondItem="9T3-14-gES" secondAttribute="leading" constant="16" id="W4y-BI-W4S"/>
                             <constraint firstItem="9T3-14-gES" firstAttribute="bottom" secondItem="HSB-cd-64h" secondAttribute="bottom" constant="80" id="X5E-Ra-a8Z"/>
                             <constraint firstItem="nD1-0T-k9D" firstAttribute="centerX" secondItem="Ull-8X-OAF" secondAttribute="centerX" id="Ypt-Ae-zX8"/>
                             <constraint firstItem="Tky-DC-VHU" firstAttribute="centerX" secondItem="Ull-8X-OAF" secondAttribute="centerX" id="Zac-X7-nEd"/>
                             <constraint firstItem="9T3-14-gES" firstAttribute="trailing" secondItem="Tky-DC-VHU" secondAttribute="trailing" constant="16" id="bAP-wq-faA"/>
+                            <constraint firstItem="HSB-cd-64h" firstAttribute="top" secondItem="AM6-kh-p1h" secondAttribute="bottom" constant="32" id="g6D-Mq-hvj"/>
                             <constraint firstItem="nD1-0T-k9D" firstAttribute="leading" secondItem="9T3-14-gES" secondAttribute="leading" constant="8" id="hBn-uo-ZAW"/>
                             <constraint firstItem="9T3-14-gES" firstAttribute="trailing" secondItem="nD1-0T-k9D" secondAttribute="trailing" constant="8" id="r5V-nI-M8F"/>
                             <constraint firstItem="Tky-DC-VHU" firstAttribute="leading" secondItem="9T3-14-gES" secondAttribute="leading" constant="16" id="vHu-t5-3dp"/>
@@ -359,6 +367,7 @@
                     <connections>
                         <outlet property="amountLabel" destination="U5d-qx-bio" id="NOg-RY-Ih4"/>
                         <outlet property="budgetLabel" destination="67s-ed-xmM" id="Hbw-0O-5R8"/>
+                        <outlet property="donutChartView" destination="AM6-kh-p1h" id="JEW-0b-cc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP8-VB-NLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -781,10 +790,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5bO-Ho-2jd"/>
+        <segue reference="S79-M0-Zki"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="chart.pie" catalog="system" width="32" height="32"/>
+        <image name="chart.pie" catalog="system" width="128" height="123"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="list.clipboard" catalog="system" width="98" height="128"/>
