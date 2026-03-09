@@ -17,7 +17,7 @@ var expenses = [
             category: "Food",
             date: Date(),
             note: "Lunch at Maharaja"),
-    Expense(amount: 6,
+    Expense(amount: 95,
             category: "Drinks",
             date: Date(),
             note: "Coffee at Starbucks"),
@@ -50,7 +50,7 @@ var Clothes = [
 ]
 
 var Drinks = [
-    Expense(amount: 6,
+    Expense(amount: 95,
             category: "Drinks",
             date: Date(),
             note: "Coffee at Starbucks")

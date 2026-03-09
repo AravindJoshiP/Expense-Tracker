@@ -8,6 +8,8 @@
 import UIKit
 
 class summaryViewController: UIViewController {
+    
+    @IBOutlet weak var pieChartView: PieChartView!
 
     @IBOutlet weak var amountLabel: UILabel!
     override func viewDidLoad() {
@@ -16,7 +18,9 @@ class summaryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         amountLabel.text = "\(currency) \(amountSpent)"
+        pieChartView.expenses = expenses
     }
 
     /*

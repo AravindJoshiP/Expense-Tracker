@@ -45,7 +45,7 @@ class allExpenseTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = exp.category
+        cell.textLabel?.text = "\(String(exp.category)) - \(currency) \(String(exp.amount))"
         cell.detailTextLabel?.text = exp.note
         return cell
     }
@@ -63,8 +63,46 @@ class allExpenseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let deletedExpense = expenses[indexPath.row]
+            let curr = deletedExpense.amount
+            amountSpent -= curr
+            
             expenses.remove(at: indexPath.row)
+            
+            switch deletedExpense.category{
+            case "Food":
+                if let index = Food.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Food.remove(at: index)
+                        }
+            case "Clothes":
+                if let index = Clothes.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Clothes.remove(at: index)
+                        }
+            case "Drinks":
+                if let index = Drinks.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Drinks.remove(at: index)
+                        }
+
+            case "Groceries":
+                if let index = Groceries.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Groceries.remove(at: index)
+                        }
+            case "Education":
+                if let index = Education.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Education.remove(at: index)
+                        }
+
+            case "Housing":
+                if let index = Housing.firstIndex(where: { $0.note == deletedExpense.note }) {
+                            Housing.remove(at: index)
+                        }
+            default:
+                break
+            }
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
             
         } //else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
