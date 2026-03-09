@@ -48,8 +48,27 @@ class AddExpViewController: UIViewController {
         categoryDropdown.menu = menu
         categoryDropdown.showsMenuAsPrimaryAction = true
         
+        var expenseIndex: Int?
+        
+        setupScreen()
         
         // Do any additional setup after loading the view.
+    }
+    
+    func setupScreen() {
+        if let exp = expense {
+            navigationItem.title = "Edit Expense"
+            amountField.text = String(exp.amount)
+            categoryDropdown.setTitle(exp.category, for: .normal)
+            //categoryDropdown.text = exp.category
+            noteField.text = exp.note
+            dateField.date = exp.date
+        } else {
+            navigationItem.title = "Add Expense"
+            amountField.text = ""
+            noteField.text = ""
+            dateField.date = Date()
+        }
     }
     
     @IBAction func saveFunc(_ sender: Any) {
@@ -78,7 +97,7 @@ class AddExpViewController: UIViewController {
             case "Education":
                 Education.append(new_expense)
             case "Housing":
-                Education.append(new_expense)
+                Housing.append(new_expense)
             default:
                 print("Error with category!")
             }
