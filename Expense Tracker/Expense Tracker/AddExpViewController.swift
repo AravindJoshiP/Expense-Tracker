@@ -48,8 +48,6 @@ class AddExpViewController: UIViewController {
         categoryDropdown.menu = menu
         categoryDropdown.showsMenuAsPrimaryAction = true
         
-        var expenseIndex: Int?
-        
         setupScreen()
         
         // Do any additional setup after loading the view.

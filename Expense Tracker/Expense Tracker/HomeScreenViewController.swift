@@ -7,7 +7,7 @@
 
 import UIKit
 
-var amountSpent:Int = 500
+var amountSpent:Int = 0
 var currency: String = "$"
 var Budget: Int = 5000
 class HomeScreenViewController: UIViewController {
@@ -17,6 +17,9 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var amountLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in expenses{
+            amountSpent += i.amount
+        }
         // Do any additional setup after loading the view.
     }
     

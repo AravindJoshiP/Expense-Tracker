@@ -17,6 +17,9 @@ class PieChartView: UIView {
         UIColor(red: 0.93, green: 0.46, blue: 0.46, alpha: 1)
     ]
     
+    func legendColors() -> [UIColor]{
+        return sliceColors
+    }
     override func draw(_ rect: CGRect) {
         guard !expenses.isEmpty else { return }
         guard let context = UIGraphicsGetCurrentContext() else { return }

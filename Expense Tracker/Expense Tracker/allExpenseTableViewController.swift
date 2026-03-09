@@ -66,9 +66,10 @@ class allExpenseTableViewController: UITableViewController {
             
             let deletedExpense = expenses[indexPath.row]
             let curr = deletedExpense.amount
-            amountSpent -= curr
+            
             
             expenses.remove(at: indexPath.row)
+            amountSpent -= curr
             
             switch deletedExpense.category{
             case "Food":

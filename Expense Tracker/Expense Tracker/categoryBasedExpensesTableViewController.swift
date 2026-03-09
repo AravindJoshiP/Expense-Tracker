@@ -47,7 +47,7 @@ class categoryBasedExpensesTableViewController: UITableViewController {
         case "Housing":
             return Housing.count
         default:
-            return 1
+            return 0
         }
         
     }
@@ -143,7 +143,10 @@ class categoryBasedExpensesTableViewController: UITableViewController {
         //}
     }
 
-
+    @IBAction func backFunc(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

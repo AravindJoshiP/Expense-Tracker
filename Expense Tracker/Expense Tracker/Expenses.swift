@@ -35,6 +35,7 @@ var expenses = [
             note: "Health insurance from University")
 ]
 
+
 var Food = [
     Expense(amount: 70,
             category: "Food",
