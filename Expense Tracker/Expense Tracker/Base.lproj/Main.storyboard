@@ -97,6 +97,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bnz-ko-f8Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="bottom" secondItem="bnz-ko-f8Q" secondAttribute="bottom" id="AcS-O1-UrB"/>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="top" secondItem="bnz-ko-f8Q" secondAttribute="top" id="mXZ-B9-Hdi"/>
@@ -129,72 +130,73 @@
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-5G-38n">
-                                <rect key="frame" x="165" y="168" width="63" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Food"/>
-                                <connections>
-                                    <action selector="foodFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="Q9X-fi-i3W"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="u9x-eV-IG4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYq-as-Jrd">
-                                <rect key="frame" x="155" y="230" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Clothes"/>
-                                <connections>
-                                    <action selector="clothesFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="b4G-1F-eMW"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="XAG-7h-oqa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-a7-lrA">
-                                <rect key="frame" x="160" y="302" width="73" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Drinks"/>
-                                <connections>
-                                    <action selector="drinkFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="vNa-Hz-tzx"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="TsZ-7O-ADs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSa-d9-eq4">
-                                <rect key="frame" x="148" y="370" width="98" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Groceries"/>
-                                <connections>
-                                    <action selector="grocFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="wSK-wr-8fS"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="jFR-3F-fM7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-pK-4RQ">
-                                <rect key="frame" x="147" y="445" width="100" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Education"/>
-                                <connections>
-                                    <action selector="educFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="4as-L5-7m5"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="vaY-f0-aCe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-w8-8fq">
-                                <rect key="frame" x="153" y="528" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Housing"/>
-                                <connections>
-                                    <action selector="houseFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="uF3-Ev-BhR"/>
-                                    <segue destination="F9p-Yh-CsF" kind="presentation" id="Cyv-RA-3Un"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-nx-fUe">
+                                <rect key="frame" x="146.66666666666666" y="263" width="100" height="326"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-5G-38n">
+                                        <rect key="frame" x="18.666666666666682" y="0.0" width="62.666666666666657" height="34.333333333333336"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Food"/>
+                                        <connections>
+                                            <action selector="foodFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="Q9X-fi-i3W"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="u9x-eV-IG4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYq-as-Jrd">
+                                        <rect key="frame" x="8.6666666666666856" y="58.333333333333314" width="82.333333333333329" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Clothes"/>
+                                        <connections>
+                                            <action selector="clothesFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="b4G-1F-eMW"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="XAG-7h-oqa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-a7-lrA">
+                                        <rect key="frame" x="13.666666666666686" y="116.66666666666667" width="72.333333333333329" height="34.333333333333329"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Drinks"/>
+                                        <connections>
+                                            <action selector="drinkFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="vNa-Hz-tzx"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="TsZ-7O-ADs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSa-d9-eq4">
+                                        <rect key="frame" x="1" y="175" width="97.666666666666671" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Groceries"/>
+                                        <connections>
+                                            <action selector="grocFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="wSK-wr-8fS"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="jFR-3F-fM7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-pK-4RQ">
+                                        <rect key="frame" x="0.0" y="233.33333333333331" width="100" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Education"/>
+                                        <connections>
+                                            <action selector="educFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="4as-L5-7m5"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="vaY-f0-aCe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-w8-8fq">
+                                        <rect key="frame" x="6.3333333333333428" y="291.66666666666663" width="87" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Housing"/>
+                                        <connections>
+                                            <action selector="houseFunc:" destination="0y7-f6-3Ch" eventType="touchUpInside" id="uF3-Ev-BhR"/>
+                                            <segue destination="F9p-Yh-CsF" kind="presentation" id="Cyv-RA-3Un"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TOe-kw-PTo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerX" secondItem="cL8-Qg-YFC" secondAttribute="centerX" id="0Op-aa-TG9"/>
+                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerY" secondItem="cL8-Qg-YFC" secondAttribute="centerY" id="80K-nw-t5Y"/>
                             <constraint firstItem="TOe-kw-PTo" firstAttribute="trailing" secondItem="AfT-wi-aRH" secondAttribute="trailing" constant="8" id="h2C-Zr-Bei"/>
                             <constraint firstItem="AfT-wi-aRH" firstAttribute="top" secondItem="TOe-kw-PTo" secondAttribute="top" constant="16" id="jJn-5j-5Xu"/>
                             <constraint firstItem="AfT-wi-aRH" firstAttribute="leading" secondItem="TOe-kw-PTo" secondAttribute="leading" constant="8" id="tz0-8t-wNb"/>
@@ -212,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ui-y3-yKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="-688"/>
+            <point key="canvasLocation" x="261.83206106870227" y="-688.0281690140846"/>
         </scene>
         <!--Settings-->
         <scene sceneID="igb-HX-nMJ">
@@ -279,6 +281,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r65-qi-roh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="r65-qi-roh" firstAttribute="trailing" secondItem="6jy-86-pxL" secondAttribute="trailing" constant="24" id="27i-HW-3Ie"/>
                             <constraint firstItem="6jy-86-pxL" firstAttribute="leading" secondItem="bry-Ga-bHe" secondAttribute="trailing" constant="125" id="2jd-nV-9Qn"/>
@@ -452,7 +455,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YnM-7E-lGC">
-                                        <rect key="frame" x="96.333333333333343" y="95" width="280.66666666666663" height="34"/>
+                                        <rect key="frame" x="120.33333333333334" y="95" width="256.66666666666663" height="34"/>
                                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" textContentType="postal-code"/>
@@ -527,7 +530,7 @@
                                     <constraint firstItem="hbC-VM-C5I" firstAttribute="top" secondItem="gUx-5E-RiN" secondAttribute="bottom" constant="8" id="NVS-q3-rr8"/>
                                     <constraint firstItem="hUR-qT-yKv" firstAttribute="top" secondItem="uLY-E7-O5q" secondAttribute="bottom" constant="142" id="QBX-cj-JqL"/>
                                     <constraint firstItem="YnM-7E-lGC" firstAttribute="top" secondItem="AJZ-9D-x5e" secondAttribute="bottom" constant="54.670000000000002" id="Twd-06-u45"/>
-                                    <constraint firstItem="YnM-7E-lGC" firstAttribute="leading" secondItem="OGf-30-Pg1" secondAttribute="trailing" constant="16" id="UIb-11-La5"/>
+                                    <constraint firstItem="YnM-7E-lGC" firstAttribute="leading" secondItem="OGf-30-Pg1" secondAttribute="trailing" constant="40" id="UIb-11-La5"/>
                                     <constraint firstItem="vUq-v1-QJq" firstAttribute="trailing" secondItem="gUx-5E-RiN" secondAttribute="trailing" constant="16" id="WYs-sO-P7c"/>
                                     <constraint firstItem="uLY-E7-O5q" firstAttribute="leading" secondItem="sld-m4-yJd" secondAttribute="trailing" constant="32" id="aGi-ph-smr"/>
                                     <constraint firstItem="AJZ-9D-x5e" firstAttribute="top" secondItem="4R4-DQ-FTP" secondAttribute="top" constant="8" id="bJA-U7-efx"/>
@@ -549,6 +552,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0pq-zL-9Ol"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="4R4-DQ-FTP" firstAttribute="top" secondItem="0pq-zL-9Ol" secondAttribute="top" id="1BU-RH-Bjg"/>
                             <constraint firstItem="MiP-g1-Wxf" firstAttribute="top" secondItem="4R4-DQ-FTP" secondAttribute="bottom" id="9Dz-KA-2RY"/>
@@ -631,6 +635,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zTx-1g-2uY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="ZrA-oU-OO6" firstAttribute="centerX" secondItem="mH8-t2-eVh" secondAttribute="centerX" id="00y-e5-B8s"/>
                             <constraint firstItem="zTx-1g-2uY" firstAttribute="trailing" secondItem="gb9-jp-5FP" secondAttribute="trailing" constant="72" id="7fN-Ag-yt1"/>
@@ -666,6 +671,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpenseCell" textLabel="QHu-Mb-Rmw" detailTextLabel="oUz-tL-ZtT" rowHeight="71" style="IBUITableViewCellStyleSubtitle" id="0Bv-wf-ez9">
                                 <rect key="frame" x="0.0" y="50" width="393" height="71"/>
@@ -702,7 +708,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Qf7-tw-TB2">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="4kV-wW-wHN">
-                            <color key="tintColor" systemColor="tintColor"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
                                 <action selector="doneFunc:" destination="Rhr-5Y-QTP" id="vNq-IF-AeQ"/>
                             </connections>
@@ -720,6 +726,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5pK-tj-dlL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Rhr-5Y-QTP" kind="relationship" relationship="rootViewController" id="oj9-lm-iCs"/>
@@ -808,6 +815,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPj-bQ-lm3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="5fw-sh-QTg" kind="relationship" relationship="rootViewController" id="3GC-gd-wH4"/>
@@ -820,7 +828,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Cyv-RA-3Un"/>
-        <segue reference="S79-M0-Zki"/>
+        <segue reference="5bO-Ho-2jd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="123"/>
@@ -838,9 +846,6 @@
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
