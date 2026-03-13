@@ -278,9 +278,6 @@
                                 </menu>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Dark / Light"/>
-                                <connections>
-                                    <action selector="toggleTheme:" destination="AeL-kt-S0M" eventType="touchUpInside" id="Ce1-ZG-kWi"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bry-Ga-bHe">
                                 <rect key="frame" x="16" y="223" width="79" height="21"/>
@@ -342,6 +339,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="JyJ-Gq-3K7"/>
                     <connections>
                         <outlet property="currencydropdown" destination="6jy-86-pxL" id="CxH-qC-3OH"/>
+                        <outlet property="themeDropdown" destination="Fab-DU-QTE" id="iUs-IC-ycs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rv3-ux-MhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

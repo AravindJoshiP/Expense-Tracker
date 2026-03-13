@@ -9,6 +9,7 @@ import UIKit
 
 class settingsViewController: UIViewController {
 
+    @IBOutlet weak var themeDropdown: UIButton!
     @IBOutlet weak var currencydropdown: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,18 @@ class settingsViewController: UIViewController {
         
         currencydropdown.menu = menu
         currencydropdown.showsMenuAsPrimaryAction = true
+        
+        let theme1 = UIAction(title: "Dark"){ [weak self] action in
+            self?.themeDropdown.setTitle(action.title, for: .normal)
+        }
+        let theme2 = UIAction(title: "Light"){ [weak self] action in
+            self?.themeDropdown.setTitle(action.title, for: .normal)
+        }
+        
+        let themes = UIMenu(title: "Select the theme", children: [theme1,theme2])
+        
+        themeDropdown.menu = themes
+        themeDropdown.showsMenuAsPrimaryAction = true
     }
     
     @IBAction func currencyValue(_ sender: UIButton) {
@@ -55,16 +68,27 @@ class settingsViewController: UIViewController {
         else{
             currency = "$"
         }
-    }
-    
-    
-    @IBAction func toggleTheme(_ sender: UIButton) {
-        if overrideUserInterfaceStyle == .dark{
-            overrideUserInterfaceStyle = .light
-        } else{
-            overrideUserInterfaceStyle = .dark
+        let theme = themeDropdown.titleLabel?.text
+        if(theme == "Dark"){
+            darkMode()
+            dark = true
+        }
+        else{
+            lightMode()
+            dark = false
         }
     }
+    
+    
+    func darkMode(){
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.windows.first else {return}
+        window.overrideUserInterfaceStyle = .dark
+    }
+    func lightMode(){
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.windows.first else {return}
+        window.overrideUserInterfaceStyle = .light
+    }
+        
     /*
     // MARK: - Navigation
 

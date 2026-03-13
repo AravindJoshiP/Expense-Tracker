@@ -10,6 +10,7 @@ import UIKit
 var amountSpent:Int = 0
 var currency: String = "$"
 var Budget: Int = 5000
+var dark = true
 class HomeScreenViewController: UIViewController {
 
     @IBOutlet weak var donutChartView: DonutChartView!
@@ -20,6 +21,9 @@ class HomeScreenViewController: UIViewController {
         for i in expenses{
             amountSpent += i.amount
         }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.windows.first else {return}
+        window.overrideUserInterfaceStyle = .dark
+        dark = true
         // Do any additional setup after loading the view.
     }
     

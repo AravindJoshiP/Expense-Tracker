@@ -57,14 +57,25 @@ class PieChartView: UIView {
                            endAngle: endAngle,
                            clockwise: false)
             context.closePath()
-            context.setStrokeColor(UIColor.white.cgColor)
-            context.setLineWidth(2)
+            if(dark == true){
+                context.setStrokeColor(UIColor.black.cgColor)
+            }
+            else{
+                context.setStrokeColor(UIColor.white.cgColor)
+            }
+            context.setLineWidth(2.5)
             context.strokePath()
             
             startAngle = endAngle
         }
         
-        context.setFillColor(UIColor.white.cgColor)
+        if(dark == true){
+            context.setFillColor(UIColor.black.cgColor)
+        }
+        else{
+            context.setFillColor(UIColor.white.cgColor)
+        }
+        
         context.addArc(center: center,
                        radius: radius * 0.50,
                        startAngle: 0,

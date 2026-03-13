@@ -27,7 +27,6 @@ class DonutChartView: UIView {
         let startAngle = -CGFloat.pi / 2
         let endAngle = startAngle + (2 * CGFloat.pi)
         
-        // Prevent division by zero
         let safeBudget = max(budget, 1)
         let progress = min(amountSpent / safeBudget, 1.0)
         let spentEndAngle = startAngle + (2 * CGFloat.pi * progress)
@@ -35,7 +34,6 @@ class DonutChartView: UIView {
         context.setLineWidth(lineWidth)
         context.setLineCap(.round)
         
-        // Background ring = full budget
         context.setStrokeColor(UIColor.systemGray4.cgColor)
         context.addArc(center: center,
                        radius: radius,
@@ -44,7 +42,6 @@ class DonutChartView: UIView {
                        clockwise: false)
         context.strokePath()
         
-        // Spent ring
         context.setStrokeColor(UIColor.systemOrange.cgColor)
         context.addArc(center: center,
                        radius: radius,
@@ -53,11 +50,10 @@ class DonutChartView: UIView {
                        clockwise: false)
         context.strokePath()
         
-        // Optional center text
         let percentText = "\(Int(progress * 100))%"
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 22),
-            .foregroundColor: UIColor.black
+            .foregroundColor: UIColor.systemOrange
         ]
         
         let textSize = percentText.size(withAttributes: attributes)
