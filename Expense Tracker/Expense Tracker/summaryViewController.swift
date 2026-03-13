@@ -26,7 +26,6 @@ class summaryViewController: UIViewController {
     }
     
     func setupLegend() {
-           // clear old legend rows
            for view in legendStackView.arrangedSubviews {
                legendStackView.removeArrangedSubview(view)
                view.removeFromSuperview()

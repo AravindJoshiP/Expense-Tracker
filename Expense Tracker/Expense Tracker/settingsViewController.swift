@@ -69,13 +69,14 @@ class settingsViewController: UIViewController {
             currency = "$"
         }
         let theme = themeDropdown.titleLabel?.text
-        if(theme == "Dark"){
-            darkMode()
-            dark = true
-        }
-        else{
+        if(theme == "Light"){
             lightMode()
             dark = false
+        }
+        else{
+            darkMode()
+            dark = true
+            
         }
     }
     
