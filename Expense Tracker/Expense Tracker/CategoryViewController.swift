@@ -49,8 +49,14 @@ class CategoryViewController: UIViewController {
     }
     
     
+    @IBAction func rightSwipe(_ sender: Any) {
+        tabBarController?.selectedIndex -= 1
+    }
     
     
+    @IBAction func leftSwipe(_ sender: Any) {
+        tabBarController?.selectedIndex += 1
+    }
     
     /*
     // MARK: - Navigation

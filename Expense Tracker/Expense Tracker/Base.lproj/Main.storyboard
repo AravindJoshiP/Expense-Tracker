@@ -98,12 +98,18 @@
                         <viewLayoutGuide key="safeArea" id="bnz-ko-f8Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <accessibility key="accessibilityConfiguration" label="Summary"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="bottom" secondItem="bnz-ko-f8Q" secondAttribute="bottom" id="AcS-O1-UrB"/>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="top" secondItem="bnz-ko-f8Q" secondAttribute="top" id="mXZ-B9-Hdi"/>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="leading" secondItem="bnz-ko-f8Q" secondAttribute="leading" id="nmn-Qr-lci"/>
                             <constraint firstItem="ETC-0p-u7x" firstAttribute="trailing" secondItem="bnz-ko-f8Q" secondAttribute="trailing" id="uoy-SA-0Dw"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="s6X-Lt-nvp" appends="YES" id="2Jm-gU-6sy"/>
+                            <outletCollection property="gestureRecognizers" destination="3UI-kY-fGZ" appends="YES" id="nRU-s6-Ixa"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" image="chart.pie" catalog="system" id="GE3-tc-t0h"/>
                     <connections>
@@ -113,6 +119,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GH-dp-yaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="s6X-Lt-nvp">
+                    <connections>
+                        <action selector="rightSwipe:" destination="gig-4M-wAz" id="iA5-IE-Rpp"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="3UI-kY-fGZ">
+                    <connections>
+                        <action selector="leftSwipe:" destination="gig-4M-wAz" id="eHp-oh-4dp"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-657.25190839694653" y="-688.0281690140846"/>
         </scene>
@@ -130,8 +146,8 @@
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-nx-fUe">
-                                <rect key="frame" x="146.66666666666666" y="263" width="100" height="326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-nx-fUe">
+                                <rect key="frame" x="146.66666666666666" y="283" width="100" height="286"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yko-5G-38n">
                                         <rect key="frame" x="18.666666666666682" y="0.0" width="62.666666666666657" height="34.333333333333336"/>
@@ -144,7 +160,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYq-as-Jrd">
-                                        <rect key="frame" x="8.6666666666666856" y="58.333333333333314" width="82.333333333333329" height="34.333333333333343"/>
+                                        <rect key="frame" x="8.6666666666666856" y="50.333333333333314" width="82.333333333333329" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Clothes"/>
                                         <connections>
@@ -153,7 +169,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-a7-lrA">
-                                        <rect key="frame" x="13.666666666666686" y="116.66666666666667" width="72.333333333333329" height="34.333333333333329"/>
+                                        <rect key="frame" x="13.666666666666686" y="100.66666666666669" width="72.333333333333329" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Drinks"/>
                                         <connections>
@@ -162,7 +178,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSa-d9-eq4">
-                                        <rect key="frame" x="1" y="175" width="97.666666666666671" height="34.333333333333343"/>
+                                        <rect key="frame" x="1" y="151" width="97.666666666666671" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Groceries"/>
                                         <connections>
@@ -171,7 +187,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yo-pK-4RQ">
-                                        <rect key="frame" x="0.0" y="233.33333333333331" width="100" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="201.33333333333331" width="100" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Education"/>
                                         <connections>
@@ -180,7 +196,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-w8-8fq">
-                                        <rect key="frame" x="6.3333333333333428" y="291.66666666666663" width="87" height="34.333333333333314"/>
+                                        <rect key="frame" x="6.3333333333333428" y="251.66666666666666" width="87" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Housing"/>
                                         <connections>
@@ -194,13 +210,18 @@
                         <viewLayoutGuide key="safeArea" id="TOe-kw-PTo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerX" secondItem="cL8-Qg-YFC" secondAttribute="centerX" id="0Op-aa-TG9"/>
-                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerY" secondItem="cL8-Qg-YFC" secondAttribute="centerY" id="80K-nw-t5Y"/>
                             <constraint firstItem="TOe-kw-PTo" firstAttribute="trailing" secondItem="AfT-wi-aRH" secondAttribute="trailing" constant="8" id="h2C-Zr-Bei"/>
+                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerY" secondItem="cL8-Qg-YFC" secondAttribute="centerY" id="hCw-TM-YVD"/>
                             <constraint firstItem="AfT-wi-aRH" firstAttribute="top" secondItem="TOe-kw-PTo" secondAttribute="top" constant="16" id="jJn-5j-5Xu"/>
+                            <constraint firstItem="K4g-nx-fUe" firstAttribute="centerX" secondItem="cL8-Qg-YFC" secondAttribute="centerX" id="qcH-6f-Ybs"/>
                             <constraint firstItem="AfT-wi-aRH" firstAttribute="leading" secondItem="TOe-kw-PTo" secondAttribute="leading" constant="8" id="tz0-8t-wNb"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XSs-HN-Emq" appends="YES" id="hM5-jA-5tE"/>
+                            <outletCollection property="gestureRecognizers" destination="bAf-T5-OCd" appends="YES" id="qfI-4m-7ws"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Categories" image="list.clipboard" catalog="system" id="3PQ-EC-7hQ"/>
                     <connections>
@@ -213,6 +234,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ui-y3-yKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="XSs-HN-Emq">
+                    <connections>
+                        <action selector="rightSwipe:" destination="0y7-f6-3Ch" id="LTX-L8-tnk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="bAf-T5-OCd">
+                    <connections>
+                        <action selector="leftSwipe:" destination="0y7-f6-3Ch" id="kIR-YQ-Uer"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="261.83206106870227" y="-688.0281690140846"/>
         </scene>
@@ -247,6 +278,9 @@
                                 </menu>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Dark / Light"/>
+                                <connections>
+                                    <action selector="toggleTheme:" destination="AeL-kt-S0M" eventType="touchUpInside" id="Ce1-ZG-kWi"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bry-Ga-bHe">
                                 <rect key="frame" x="16" y="223" width="79" height="21"/>
@@ -282,6 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="r65-qi-roh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="r65-qi-roh" firstAttribute="trailing" secondItem="6jy-86-pxL" secondAttribute="trailing" constant="24" id="27i-HW-3Ie"/>
                             <constraint firstItem="6jy-86-pxL" firstAttribute="leading" secondItem="bry-Ga-bHe" secondAttribute="trailing" constant="125" id="2jd-nV-9Qn"/>
@@ -299,6 +334,10 @@
                             <constraint firstItem="r65-qi-roh" firstAttribute="trailing" secondItem="Fab-DU-QTE" secondAttribute="trailing" constant="42" id="rQd-Rk-yer"/>
                             <constraint firstItem="Fab-DU-QTE" firstAttribute="leading" secondItem="Rdm-eZ-x7t" secondAttribute="trailing" constant="150" id="zoE-8p-pQ3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VW0-4E-uJ2" appends="YES" id="NXJ-DE-MA2"/>
+                            <outletCollection property="gestureRecognizers" destination="iVh-hJ-dxX" appends="YES" id="kWr-09-6Mz"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="JyJ-Gq-3K7"/>
                     <connections>
@@ -306,6 +345,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rv3-ux-MhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="VW0-4E-uJ2">
+                    <connections>
+                        <action selector="rightSwipe:" destination="AeL-kt-S0M" id="e1D-fN-cPg"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="iVh-hJ-dxX">
+                    <connections>
+                        <action selector="leftSwipe:" destination="AeL-kt-S0M" id="bRh-BJ-2ku"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1265" y="-688"/>
         </scene>
@@ -387,6 +436,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9T3-14-gES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nD1-0T-k9D" firstAttribute="top" secondItem="9T3-14-gES" secondAttribute="top" constant="16" id="240-0g-1aL"/>
                             <constraint firstItem="HSB-cd-64h" firstAttribute="leading" secondItem="9T3-14-gES" secondAttribute="leading" constant="32" id="3Kk-h1-DqX"/>
@@ -408,6 +458,10 @@
                             <constraint firstItem="9T3-14-gES" firstAttribute="trailing" secondItem="dQQ-G5-DaQ" secondAttribute="trailing" constant="16" id="wVf-jT-Tsq"/>
                             <constraint firstItem="Tky-DC-VHU" firstAttribute="top" secondItem="dQQ-G5-DaQ" secondAttribute="bottom" constant="16" id="xY2-rk-x9i"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="LWA-re-lnG" appends="YES" id="d1R-pW-7ws"/>
+                            <outletCollection property="gestureRecognizers" destination="smU-hg-Wrt" appends="YES" id="m32-8Y-IES"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="e4Y-oH-ZlK"/>
                     <connections>
@@ -417,6 +471,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oP8-VB-NLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="LWA-re-lnG">
+                    <connections>
+                        <action selector="rightSwipe:" destination="RG1-sC-3be" id="0yO-xl-1gR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="smU-hg-Wrt">
+                    <connections>
+                        <action selector="leftSwipe:" destination="RG1-sC-3be" id="6Jq-xH-vX6"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1569" y="-688"/>
         </scene>
@@ -828,7 +892,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Cyv-RA-3Un"/>
-        <segue reference="5bO-Ho-2jd"/>
+        <segue reference="S79-M0-Zki"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="123"/>
@@ -842,10 +906,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

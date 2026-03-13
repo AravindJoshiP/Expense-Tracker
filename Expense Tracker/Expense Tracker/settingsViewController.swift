@@ -56,6 +56,15 @@ class settingsViewController: UIViewController {
             currency = "$"
         }
     }
+    
+    
+    @IBAction func toggleTheme(_ sender: UIButton) {
+        if overrideUserInterfaceStyle == .dark{
+            overrideUserInterfaceStyle = .light
+        } else{
+            overrideUserInterfaceStyle = .dark
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -66,4 +75,11 @@ class settingsViewController: UIViewController {
     }
     */
 
+
+    @IBAction func leftSwipe(_ sender: Any) {
+        tabBarController?.selectedIndex += 1
+    }
+    @IBAction func rightSwipe(_ sender: Any) {
+        tabBarController?.selectedIndex -= 1
+    }
 }
